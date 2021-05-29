@@ -1,0 +1,40 @@
+<html>
+
+
+
+<body>
+<h2>  List Contacts :  </h2>
+
+<a href="/add/contact" > Add Contact </a>
+
+<table border="2">
+
+	<tr>
+		<td>ID</td>
+		<td>Full Name</td>
+		<td>Phone </td>
+		<td>Action</td>
+	</tr>
+<% if(users.length > 0) {  %>
+<% for(var i=0 ; i< users.length ; i++) {    %>
+<tr>
+		<td><%= users[i]._id   %></td>
+		<td><%= users[i].FullName   %></td>
+		<td><%= users[i].Phone   %> </td>
+		<td>
+			<a href="/edit/contact/<%= users[i]._id   %>">Edit</a>
+			<a href="/delete/<%= users[i]._id   %>">Remove</a>
+			<a href="/<%= users[i]._id   %>">Show</a>
+		</td>
+</tr>
+
+<%   }  %>
+<%   }else{  %>
+<h3> No contact found !!! </3>
+<%   }  %>
+</table>
+
+</body>
+
+
+</html>
